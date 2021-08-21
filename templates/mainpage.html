@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+
+{% block head %} 
+<title>Polling-App</title>
+<link rel="stylesheet" href="{{ url_for( 'static',filename='css/mainpage.css')}}">
+<script src="{{ url_for('static',filename='javascript/mainpage.js') }}"></script>
+{% endblock %}
+
+
+{% block body %} 
+<div id="navbar">
+    <span class="navbar-element" id="app-name">
+        Polling App
+    </span>
+    <span class="navbar-element" id="menu-icon"><a href="/login">Logout</a></span>
+</div>
+
+<div id="other-than-navbar">
+    <div id="team-side" class="team">
+        <h3>Teams-List</h3>
+        {% for team in teams%}
+            <div class="team">
+                <a href="/{{ user }}/{{ team.name }}/feed" class="team-list" id="team-name">{{ team.name }}</a>
+            </div>
+    
+        {% else %}
+            <p>Not in any teams</p>
+            <p>Join a team or Create one</p>
+        {% endfor %}
+    </div>
+
+    <div class="team" id="create-team">
+        <div class="create" id="create-icon" >
+            <img src="{{ url_for('static',filename='icons/icons8-add-user-group-woman-man-60.png') }}" alt="add team">
+        </div>
+        <div id="add-team">
+            {% if result %}
+            <p> {{ result }} </p>
+            {% endif %}
+            <form action="{{ user }}/team/create" method="POST">
+                <input type="text" name="teamname" id="text-inp" class="inpteam" placeholder="Enter the team name" required minlength="3">
+                <input type="submit" value="Create Team" class="inpteam" id="teamcreatebuttn">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

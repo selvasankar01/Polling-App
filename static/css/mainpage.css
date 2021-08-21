@@ -1,0 +1,70 @@
+#navbar{
+    display: flex;
+    width: 100%;
+    background-color: #C3EDEA;
+}
+
+.navbar-element{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 1%;
+}
+
+#app-name{
+    margin-right: auto;
+    margin-left: 0;
+    font-weight: 600;
+    padding-left: 2.5%;
+    font-size: 2rem;
+}
+
+#menu-icon{
+    margin-left: auto;
+    margin-right: 0;
+    padding-right: 5%;
+    height: 75%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#other-than-navbar{
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.team{
+    flex-basis: 300px;
+    flex-shrink: 1;
+    margin: 2%;
+
+}
+
+#create-team{
+    flex-grow: 1;
+    border: black 2px solid;
+}
+#team-side{
+    flex-grow: 3;
+}
+
+#create-icon{
+    margin: 0.3em auto;
+    width: min-content;
+}
+
+#add-team{
+    margin: 0.3em auto;
+    width: min-content;
+    font-size: 2.5rem;
+}
+
+form{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}

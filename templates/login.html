@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% block head %} 
+<title>Login</title>
+<link rel="stylesheet" href="{{ url_for( 'static',filename='css/login.css')}}">
+{% endblock %}
+
+
+{% block body %} 
+<div id="navbar">
+    <span class="navbar-element" id="app-name">
+        Polling App
+    </span>
+    <span class="navbar-element" id="menu-icon"><a href="/register">Register</a></span>
+</div>
+
+<div id="loginCredentials">
+    <form action="/login" method="POST">
+        <div class="flex-item">
+            <h3>Sign-in</h3>
+            {% if login  %}
+            <span style="color: red;">{{ login }}</span>
+            {% endif %}
+        </div>
+        <div class="flex-item">
+            <span>Username  </span>
+            <input type="text" placeholder="enter the username" name="username" class="inp" required minlength="4">    
+        </div>
+        <div class="flex-item">
+            <span>Password </span>
+            <input type="password" placeholder="min 8 characters" name="password" class="inp" required minlength="8">    
+        </div>
+        <div class="flex-item">
+            <input type="submit" value="Login" name="submit" id="sub-buttn">
+            <span class="reg"><a href="/register">Sign-up</a></span>
+        </div>
+    </form>
+</div>
+{% endblock %}

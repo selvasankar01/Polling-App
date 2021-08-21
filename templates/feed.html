@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% block head %} 
+<title>Polling-App</title>
+<link rel="stylesheet" href="{{ url_for( 'static',filename='css/mainpage.css')}}">
+{% endblock %}
+
+
+{% block body %} 
+<div id="navbar">
+    <span class="navbar-element" id="app-name">
+        Home Feed
+    </span>
+    <span class="navbar-element" id="menu-icon"><a href="/login">Logout</a></span>
+</div>
+
+<div id="other-than-navbar">
+    <div id="team-side" class="team">
+        <h3>Teams-Members-List</h3>
+        {% for member in members%}
+            <div class="team">
+                <p class="team-list" id="team-name">{{ member.name }}</p>
+            </div>
+    
+        {% else %}
+            <p>No members in team yet</p>
+        {% endfor %}
+    </div>
+
+    <div id="feed-area" class="team">
+        {% for poll in feeds %}
+        <div class="feed">
+            <h4>{{ poll.topic }}</h4>
+            {% for option in poll.options %}
+            <option id="options" >
+                {{ option }}
+            </option>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No polls yet</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

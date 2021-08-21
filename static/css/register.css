@@ -1,0 +1,74 @@
+#navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    background-color: #C3EDEA;
+}
+
+.navbar-element{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 1%;
+}
+
+#app-name{
+    margin-right: auto;
+    margin-left: 0;
+    font-weight: 600;
+    padding-left: 2.5%;
+    font-size: 2rem;
+}
+
+#menu-icon{
+    margin-left: auto;
+    font-size: 1.3rem;
+    margin-right: 0;
+    padding-right: 5%;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    height: 90vh;
+    font-family: sans-serif;
+    background-color: #F8F3EB;
+}
+
+#loginCredentials{
+    font-size: 1.8rem;
+    margin: 60px auto 0 auto;
+    width: max(30%,200px);
+    border: gray 5px groove;
+    border-radius: 10%;
+}
+
+.flex-item{
+    margin: 10%;
+}
+
+#sub-buttn{
+    outline: none;
+    border-radius: 0.5em;
+    border: solid ;
+    font-size: 1.5rem;
+}
+
+#sub-buttn:hover{
+    transform: scale(1.2);
+    background-color: #FC7E2F;
+}
+
+.inp{
+    font-size: 1.8rem;
+    width: 90%;
+}
+
+.reg{
+    font-size: 1rem;
+}
+
+h3{
+    font-size: 2.5rem;
+}
